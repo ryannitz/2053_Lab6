@@ -35,4 +35,12 @@ public class BallController : MonoBehaviour
             myAudio.Play();
         }
     }
+
+    void FixedUpdate()
+    {
+        Vector3 myVelocity = rb.velocity;
+        myVelocity.Normalize();
+        float forcePower = 2;
+        rb.AddForce(forcePower * myVelocity);
+    }
 }
